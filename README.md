@@ -1,4 +1,4 @@
-# Practica III - Grafo #
+# Práctica III - Grafo #
 
 ![Copyrith](Copyright.png)
 
