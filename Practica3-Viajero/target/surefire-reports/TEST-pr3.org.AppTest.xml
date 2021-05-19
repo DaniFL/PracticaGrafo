@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pr3.org.AppTest" time="0.029" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pr3.org.AppTest" time="0.029" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/danii/Desktop/Visual Studio/PracticaGrafo/Practica3-Viajero/target/surefire/surefirebooter8066688240243006718.jar /Users/danii/Desktop/Visual Studio/PracticaGrafo/Practica3-Viajero/target/surefire 2021-05-19T12-19-18_707-jvmRun1 surefire5661016372609757428tmp surefire_0284612769249495297tmp"/>
+    <property name="sun.java.command" value="/Users/danii/Desktop/Visual Studio/PracticaGrafo/Practica3-Viajero/target/surefire/surefirebooter3321829014237663002.jar /Users/danii/Desktop/Visual Studio/PracticaGrafo/Practica3-Viajero/target/surefire 2021-05-19T20-31-43_925-jvmRun1 surefire5567753508958472790tmp surefire_02587507356785722192tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/danii/Desktop/Visual Studio/PracticaGrafo/Practica3-Viajero/target/test-classes:/Users/danii/Desktop/Visual Studio/PracticaGrafo/Practica3-Viajero/target/classes:/Users/danii/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/danii/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/danii/Desktop/Visual Studio/PracticaGrafo/Practica3-Viajero/target/surefire/surefirebooter8066688240243006718.jar"/>
+    <property name="surefire.real.class.path" value="/Users/danii/Desktop/Visual Studio/PracticaGrafo/Practica3-Viajero/target/surefire/surefirebooter3321829014237663002.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="15.0.2+7"/>
@@ -54,8 +54,9 @@
     <property name="java.class.version" value="59.0"/>
   </properties>
   <testcase name="shouldAnswerWithTrue" classname="pr3.org.AppTest" time="0.001"/>
+  <testcase name="toStringPrueba" classname="pr3.org.AppTest" time="0"/>
   <testcase name="containsVertex" classname="pr3.org.AppTest" time="0.001"/>
-  <testcase name="añadirVertice" classname="pr3.org.AppTest" time="0.001"/>
+  <testcase name="añadirVertice" classname="pr3.org.AppTest" time="0"/>
   <testcase name="obtainAdjacents" classname="pr3.org.AppTest" time="0"/>
   <testcase name="añadirarista" classname="pr3.org.AppTest" time="0"/>
 </testsuite>
