@@ -1,10 +1,16 @@
 package pr3.org.dominio;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
+
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableModel;
+
 import java.io.IOException;
 
 public class Graph<V> {
@@ -113,6 +119,29 @@ public class Graph<V> {
      *         arcos del grafo.
      */
     public List<V> onePath(V v1, V v2) {
-        return null; 
+        boolean encontrado = false; 
+        Stack<V> abierta = new Stack<>(); 
+        ArrayList<V> traza = new ArrayList<>(); 
+
+        abierta.push(v1); 
+        //Si la pila esta llena y no se haya encontrado solución, se saca vértice de la pila y se añade a la lista. 
+        while (!abierta.isEmpty() && !encontrado){
+            V vertice = abierta.pop(); 
+            traza.add(vertice); 
+            if (vertice.equals(v2)){
+                encontrado = true; 
+            }
+            else{
+                for(V verticeAdyacente : adjacenyList.get(vertice)){
+                    if (traza.contains(verticeAdyacente)){
+                    }
+                    else{
+                        abierta.push(verticeAdyacente);
+                    }
+                }
+            } 
+        }
+        System.out.println(traza + "traza");
+            return traza; 
     }
 }

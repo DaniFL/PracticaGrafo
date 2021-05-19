@@ -3,10 +3,13 @@ package pr3.org;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import org.junit.Test;
 import pr3.org.dominio.Graph;
+
 
 /**
  * Unit test for simple App.
@@ -110,5 +113,34 @@ public class AppTest {
         assertEquals("1 relacionado con [6]\n2 relacionado con []\n3 relacionado con [6]\n6 relacionado con [1, 3]\n",
                 g4.toString());
     }
+
+    @Test
+    public void onePathFindsAPath(){
+        System.out.println("\nTest onePathFindsAPath");
+        System.out.println("----------------------");
+        // Se construye el grafo.
+        Graph<Integer> g5 = new Graph<>();
+        g5.addVertex(1);
+        g5.addVertex(2);
+        g5.addVertex(3);
+        g5.addVertex(4);
+        g5.addVertex(5);
+        g5.addVertex(6);
+        g5.addEdge(1, 2);
+        g5.addEdge(3, 4);
+        g5.addEdge(1, 5);
+        g5.addEdge(5, 6);
+        g5.addEdge(6, 4);
+        // Se construye el camino esperado.
+        List<Integer> expectedPath = new ArrayList<>();
+        expectedPath.add(1);
+        expectedPath.add(5);
+        expectedPath.add(6);
+        expectedPath.add(4);
+        //Se comprueba si el camino devuelto es igual al esperado.
+        assertEquals(expectedPath, g5.onePath(1, 4));
+}
+
+    
 
 }
