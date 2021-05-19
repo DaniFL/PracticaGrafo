@@ -92,7 +92,7 @@ public class Graph<V> {
     /*
      * Método ‘toString()‘ reescrito para la clase ‘Grafo.java‘.
      * 
-     * @return una cadena de caracteres con la lista de adyacencia.
+     * @return una cadena de caracteres (String) con la lista de adyacencia.
      */
     @Override
     public String toString() {
@@ -113,6 +113,6 @@ public class Graph<V> {
      *         arcos del grafo.
      */
     public List<V> onePath(V v1, V v2) {
-        return null; // Este código hay que modificarlo.
+        return null; 
     }
 }
