@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: pr3.org.AppTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.03 s <<< FAILURE! - in pr3.org.AppTest
-añadirarista(pr3.org.AppTest)  Time elapsed: 0.004 s  <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "java.util.Set.add(Object)" because "aristas" is null
-	at pr3.org.AppTest.añadirarista(AppTest.java:46)
-
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s - in pr3.org.AppTest
