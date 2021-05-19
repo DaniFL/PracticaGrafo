@@ -136,7 +136,7 @@ public class Graph<V> {
         ArrayList<V> traza = new ArrayList<>();
 
         abierta.push(v1);
-        // Si la pila esta llena y no se haya encontrado solución, se saca vértice de la
+        // Si la pila esta llena y no se ha encontrado solución, se saca vértice de la
         // pila y se añade a la lista.
         while (!abierta.isEmpty() && !encontrado) {
             V vertice = abierta.pop();
