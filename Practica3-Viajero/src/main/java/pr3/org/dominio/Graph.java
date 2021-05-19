@@ -7,10 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
-
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
-
 import java.io.IOException;
 
 public class Graph<V> {
@@ -25,6 +23,7 @@ public class Graph<V> {
      * @return ‘true‘ si no estaba anteriormente y ‘false‘ en caso contrario.
      */
 
+     //Complejidad O(n^2): dos bucles se incrementan linealmente uno dentro de otro.
     public boolean addVertex(V v) {
         if (adjacenyList.keySet().contains(v)) {
             System.out.println(v + " Este vértice no se puede introducir, está duplicado ");
@@ -36,16 +35,18 @@ public class Graph<V> {
         }
     }
     /*
-     * Añade un arco (arista) entre los vértices ‘v1‘ y ‘v2‘ al grafo. En caso de que no
-     * exista alguno de los vértices, lo añade también. v1 el origen del arco.
+     * Añade un arco (arista) entre los vértices ‘v1‘ y ‘v2‘ al grafo. En caso de
+     * que no exista alguno de los vértices, lo añade también. v1 el origen del
+     * arco.
      * 
      * @param v2 el destino del arco.
      * 
      * @return ‘true‘ si no existía el arco y ‘false‘ en caso contrario.
      */
 
-    // añadir aristas (conexión entre puntos), comprobar que no se añaden dos aristas iguales.
-
+    // añadir aristas (conexión entre puntos), comprobar que no se añaden dos
+    // aristas iguales.
+    //Complejidad O(n^2): dos bucles se incrementan linealmente uno dentro de otro.
     public boolean addEdge(V v1, V v2) {
         // camino (arista) de v1 a v2
         Set<V> aristas = adjacenyList.get(v1);
@@ -71,6 +72,8 @@ public class Graph<V> {
      * 
      * @return conjunto de vértices adyacentes.
      */
+
+     //Complejidad O(n^2): dos bucles se incrementan linealmente uno dentro de otro.
     public Set<V> obtainAdjacents(V v) throws Exception {
         if (adjacenyList.get(v) == null) {
             throw new Exception("k");
@@ -83,8 +86,11 @@ public class Graph<V> {
      * Comprueba si el grafo contiene el vértice dado.
      * 
      * @param v vértice para el que se realiza la comprobación.
+     * 
      * @return ‘true‘ si ‘v‘ es un vértice del grafo.
      */
+
+     //Complejidad O(n^2): dos bucles se incrementan linealmente uno dentro de otro.
     public boolean containsVertex(V v) {
         if (adjacenyList.containsKey(v)) {
             System.out.println(v + " Este vértice ya está contenido en el grafo");
@@ -100,6 +106,8 @@ public class Graph<V> {
      * 
      * @return una cadena de caracteres (String) con la lista de adyacencia.
      */
+
+    //Complejidad O(n): bucle se incrementa linealmente.
     @Override
     public String toString() {
         String S = "";
@@ -114,34 +122,37 @@ public class Graph<V> {
      * contrario, devuelve ‘null‘.
      *
      * @param v1 el vértice origen.
+     * 
      * @param v2 el vértice destino.
+     * 
      * @return lista con la secuencia de vértices desde ‘v1‘ hasta ‘v2‘ pasando por
-     *         arcos del grafo.
+     * arcos del grafo.
      */
-    public List<V> onePath(V v1, V v2) {
-        boolean encontrado = false; 
-        Stack<V> abierta = new Stack<>(); 
-        ArrayList<V> traza = new ArrayList<>(); 
 
-        abierta.push(v1); 
-        //Si la pila esta llena y no se haya encontrado solución, se saca vértice de la pila y se añade a la lista. 
-        while (!abierta.isEmpty() && !encontrado){
-            V vertice = abierta.pop(); 
-            traza.add(vertice); 
-            if (vertice.equals(v2)){
-                encontrado = true; 
-            }
-            else{
-                for(V verticeAdyacente : adjacenyList.get(vertice)){
-                    if (traza.contains(verticeAdyacente)){
-                    }
-                    else{
+     //Complejidad O(ln n): bucle se incrementa no linealmente.
+    public List<V> onePath(V v1, V v2) {
+        boolean encontrado = false;
+        Stack<V> abierta = new Stack<>();
+        ArrayList<V> traza = new ArrayList<>();
+
+        abierta.push(v1);
+        // Si la pila esta llena y no se haya encontrado solución, se saca vértice de la
+        // pila y se añade a la lista.
+        while (!abierta.isEmpty() && !encontrado) {
+            V vertice = abierta.pop();
+            traza.add(vertice);
+            if (vertice.equals(v2)) {
+                encontrado = true;
+            } else {
+                for (V verticeAdyacente : adjacenyList.get(vertice)) {
+                    if (traza.contains(verticeAdyacente)) {
+                    } else {
                         abierta.push(verticeAdyacente);
                     }
                 }
-            } 
+            }
         }
         System.out.println(traza + "traza");
-            return traza; 
+        return traza;
     }
 }
